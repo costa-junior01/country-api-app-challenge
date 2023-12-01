@@ -4,8 +4,12 @@ const Header = () => {
   return (
     <>
         <header className='header'>
-            <h1>Wh</h1>
-        </header>
+            <h1>Where in the World?</h1>
+            <div> 
+                <i class="uil uil-moon">Dark Mode</i>
+                {/* <i class='bx bxs-moon'>Dark Mode</i> */}
+            </div>
+        </header>  
     </>
   )
 }
