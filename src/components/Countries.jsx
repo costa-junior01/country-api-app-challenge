@@ -5,7 +5,6 @@ import Filter from './Filter'
 import API_URL from '../api/ApiUrl'
 
 const url = 'https://restcountries.com/v3.1/all' //versão 3.1
-// const url = 'https://restcountries.com/v2/all' //versão 2
 
 const Countries = () => {
 
@@ -49,8 +48,6 @@ const Countries = () => {
           }
      }
 
-
-
   return (
     <>
         <Filter onSearch={searchCountry} onSelect={getContriesOnSelect}/>
@@ -63,8 +60,7 @@ const Countries = () => {
                         <div>                  
                             <img src={country?.flags?.svg} alt={country[0]?.flags?.alt}/>
                                 <div className='details'>
-                                    {/* <h3>{name.common}</h3> */} {/*Versao 3.1 */}
-                                    <h3>{country?.name?.common}</h3> {/*Versao 2 */}
+                                    <h3>{country?.name?.common}</h3>
                                     <h4>Population: <span>{country?.population}</span></h4>
                                     <h4>Region: <span>{country?.region}</span></h4>
                                     <h4>Capital: <span>{country?.capital}</span></h4>
@@ -75,8 +71,6 @@ const Countries = () => {
                         </div>
                     </article>
                     )) : <>Not Found</>
-
-
         }
         </section>
     </>

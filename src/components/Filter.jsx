@@ -1,16 +1,14 @@
 import React from 'react'
-import { useState, useEffect } from 'react';
+import { useState} from 'react';
 
 const Filter = ({onSelect,onSearch}) => {
   const [input, setInput] = useState("");
-
  
     const selectHandler = (e) => {
       const regionName = e.target.value;
       onSelect(regionName);
       console.log("Selecionado: ", regionName)
     };
-
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -27,7 +25,6 @@ const Filter = ({onSelect,onSearch}) => {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             />
-            {/* <button  className='btn-submit' type='submit'>Search</button> */}
         </form>
 
         <div className='region-filter'>

@@ -3,7 +3,6 @@ import { Link, useParams } from 'react-router-dom'
 import API_URL from '../api/ApiUrl'
 import '../country.css'
 
-
 const Country = () => {
 
   const [country, setCountry] = useState ([])
@@ -47,7 +46,6 @@ const Country = () => {
                     <h4>Top Level of Domain: <span>{country[0]?.tld}</span></h4>
                   </div>
                 </div>
-
                
                  {/* <div className='borders'>
                     <h3>Border Countries:   
@@ -56,9 +54,7 @@ const Country = () => {
                             <ul key={border}><li>{border}</li></ul>
                           ) 
                         }
-                      )} */}
-                                     
-                
+                      )} */}                
               </div>
               </article>
         </section>

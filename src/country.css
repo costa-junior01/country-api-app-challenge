@@ -1,7 +1,6 @@
 .country {
     padding: 50px;
     align-items: center;
-    /* justify-content: space-between; */
   }
 
   .btn-back{
@@ -29,7 +28,6 @@
 
   .country article .country-details div {
     margin: 50px 0;
-    /* font-display: ; */
     display: inline-block;
     justify-content: space-between;
   }
@@ -47,9 +45,7 @@
     align-items:flex-start;
    
   }
-
-
-
+  
   .country article .country-details div h4 span {
     font-weight: 300;
   }
