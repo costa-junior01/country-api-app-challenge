@@ -31,7 +31,6 @@ This project is a React application built with Vite that leverages the [Countrie
 
 - React
 - Vite (with [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react))
-- Axios (for API requests)
 
 ## Getting Started
 
