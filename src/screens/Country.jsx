@@ -26,11 +26,13 @@ const Country = () => {
         <Link to={"/"}  className='btn-back'> 
         <i class="uil uil-arrow-left"></i> Back to Home
         </Link>
+        
             <article key={id}>
               <div className='country-inner'>
-                <img src={country[0]?.flags?.png} alt={country[0]?.flags?.alt} />
+                <img src={country[0]?.flags?.svg} alt={country[0]?.flags?.alt} />
                 <div className='country-details'>
                   <div >
+                  
                     <h2>{country[0]?.name?.common}</h2>
                     <h4>Native Name: <span>{country[0]?.name?.nativeName?.sqi?.common}</span></h4>
                     <h4>Capital: <span>{country[0]?.capital[0]}</span></h4>
@@ -39,7 +41,7 @@ const Country = () => {
                     <h4>Area: <span>{country[0]?.area}</span></h4>
                   </div>
 
-                  <div>
+                  <div className='c-dtls'>
                     <h4>Sub Region: <span>{country[0]?.subregion}</span></h4>
                     <h4>Time Zone: <span>{country[0]?.timezones}</span></h4>
                     <h4>Top Level of Domain: <span>{country[0]?.tld}</span></h4>

@@ -88,6 +88,7 @@ img {
   align-items: center;
   justify-content: space-between;
   margin-right: 30px;
+  
 }
 
 .btn {
@@ -96,15 +97,18 @@ img {
   color: var(--white);
   text-decoration: none;
   cursor: pointer;
-  border:  2px solid --very-dark-blue-background;
+  border:  2px solid var(--very-dark-blue-background);
   border-radius: 4px;
 }
 
 .btn:hover{
-  background-color: var(--white);
-  color: var(--very-dark-blue-text);
-  font-weight: var(--font-medium);
+  background-color: var(--very-dark-blue-background);
+  color: var(--white);
+  font-weight: var(--font-semi-bold);
+  box-shadow: 0 5px 20px hsla(200, 15%, 8%, 0.5);
+  transition: 0.5s;
 }
+
 
 
 
@@ -114,10 +118,30 @@ img {
   align-items: center;
   justify-content: space-between  ;
   background-color: var(--dark-blue-elements);
-  padding: 10px 20px;
+  padding: 0px 20px;
+  box-shadow: 0 5px 20px hsla(200, 15%, 8%, 0.5)
 }
 
 /* Filter */
+
+.btn-submit {
+  background-color: var(--very-dark-blue-background);
+  padding: 12px;
+  color: var(--white);
+  text-decoration: none;
+  cursor: pointer;
+  border:  2px solid --very-dark-blue-background;
+  border-radius: 0px;
+  display: inline-block;
+  flex-direction: row;
+}
+
+.btn-submit:hover{
+  background-color: var(--dark-gray-input);
+  color: var(--white);
+  font-weight: var(--font-semi-bold);
+  box-shadow: 0 5px 20px hsla(200, 15%, 8%, 0.5)
+}
 .filter{
   display: flex;
   flex-direction: column;
@@ -125,10 +149,15 @@ img {
   justify-content: space-between ;
   padding: 20px 2px;
   font-weight: var(--font-medium);
+  
 }
 
 .filter .form-control{
   width: 100%;
+}
+
+.filter .form-control:hover{
+  box-shadow: 0 5px 20px hsla(200, 15%, 8%, 0.5)
 }
 
 .filter .form-control input{
@@ -151,6 +180,10 @@ img {
 
 .filter .region-filter{
   width: 100%;
+}
+
+.filter .region-filter:hover{
+  box-shadow: 0 5px 20px hsla(200, 15%, 8%, 0.5)
 }
 
 .filter .region-filter .select{

@@ -1,20 +1,37 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 
-const Filter = () => {
+const Filter = ({onSelect,onSearch}) => {
+  const [input, setInput] = useState("");
+
+ 
+    const selectHandler = (e) => {
+      const regionName = e.target.value;
+      onSelect(regionName);
+      console.log("Selecionado: ", regionName)
+    };
+
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    onSearch(input);
+  };
 
   return (
     <section className='filter'>
-        <form className='form-control'>
+        <form onSubmit={submitHandler} className='form-control'>
             <input type='search' 
             name='search' 
             id='search' 
             placeholder='Search for a country'
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
             />
+            {/* <button  className='btn-submit' type='submit'>Search</button> */}
         </form>
 
         <div className='region-filter'>
-            <select name='select' id='select' className='select'>
+            <select onChange={selectHandler} name='select' id='select' className='select'>
             <option value="Filter by Region">Filter by Region</option>
                 <option value="Africa">Africa</option>
                 <option value="America">America</option>
@@ -22,8 +39,7 @@ const Filter = () => {
                 <option value="Europe">Europe</option>
                 <option value="Oceania">Oceania</option>
             </select>
-         </div>
-              
+         </div>              
     </section>
   )
 }
