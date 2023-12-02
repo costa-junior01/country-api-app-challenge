@@ -6,7 +6,7 @@ const Header = () => {
         <header className='header'>
             <h1>Where in the World?</h1>
             <div> 
-                <i class="uil uil-moon">Dark Mode</i>
+                <i class="uil uil-moon"></i>
                 {/* <i class='bx bxs-moon'>Dark Mode</i> */}
             </div>
         </header>  

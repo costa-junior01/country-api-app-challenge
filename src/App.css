@@ -83,6 +83,31 @@ img {
   max-width: 100%;
 }
 
+.buttons{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 30px;
+}
+
+.btn {
+  background-color: var(--very-dark-blue-background);
+  padding: 5px;
+  color: var(--white);
+  text-decoration: none;
+  cursor: pointer;
+  border:  2px solid --very-dark-blue-background;
+  border-radius: 4px;
+}
+
+.btn:hover{
+  background-color: var(--white);
+  color: var(--very-dark-blue-text);
+  font-weight: var(--font-medium);
+}
+
+
+
 /* Header */
 .header{
   display: flex;
@@ -99,6 +124,7 @@ img {
   align-items: center;
   justify-content: space-between ;
   padding: 20px 2px;
+  font-weight: var(--font-medium);
 }
 
 .filter .form-control{
@@ -130,6 +156,7 @@ img {
 .filter .region-filter .select{
   background-color: var(--dark-blue-elements);
   color: var(--white);
+  font-size: var(--normal-font-size);
   font-family: inherit;
   padding: 12px;
   width: 200px;
@@ -207,6 +234,7 @@ img {
   /* body{
     padding: 50px 100px;
   } */
+  
   .header, .filter, .grid{
     padding: 20px 100px;
   }

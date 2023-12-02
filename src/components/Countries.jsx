@@ -1,26 +1,28 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
-// const url = 'https://restcountries.com/v3.1/all' //versao 3.1
-const url = 'https://restcountries.com/v2/all' //versa 2
+// const url = 'https://restcountries.com/v3.1/all' //versão 3.1
+const url = 'https://restcountries.com/v2/all' //versão 2
 
 const Countries = () => {
 
     const [countries, setCountries] = useState ([])
-
-    const fetchData = async () => {
-        //   try {
+    
+    useEffect(() => {
+    const fetchCountriesDatas = async () => {
             const response = await fetch(url);
             const data = await response.json();
-            setCountries(data);
-        //   } catch (error) {
-            // console.error('Error fetching data:', error);
-            // console.log(data)
+            setCountries(data);      
+            console.log(data)
            }
-
-    useEffect(() => {
-        fetchData();
+   
+        fetchCountriesDatas();
      }, [])
+
+     const removeCountry = (numericCode) =>{
+        const newCountry = countries.filter((country) => country.numericCode !== numericCode)
+     }
 
   return (
     <>
@@ -33,21 +35,22 @@ const Countries = () => {
             region, 
             capital, 
             flag} = country
-            {/* subregion,  */}
 
             return <article key={numericCode}>
-                    <div>                  
-                        <img src={flag} alt={name.common}/>
-                            <div className='details'>
-                                {/* <h3>{name.common}</h3> */} {/*Versao 3.1 */}
-                                <h3>{name}</h3> {/*Versao 2 */}
-                                <h4>Population: <span>{population}</span></h4>
-                                <h4>Region: <span>{region}</span></h4>
-                                <h4>Capital: <span>{capital}</span></h4>
-                                {/* <h4>Subregion: <span>{subregion}</span></h4> */}
-                            </div>
-                    </div>
-                </article>        
+                        <div>                  
+                            <img src={flag} alt={name}/>
+                                <div className='details'>
+                                    {/* <h3>{name.common}</h3> */} {/*Versao 3.1 */}
+                                    <h3>{name}</h3> {/*Versao 2 */}
+                                    <h4>Population: <span>{population}</span></h4>
+                                    <h4>Region: <span>{region}</span></h4>
+                                    <h4>Capital: <span>{capital}</span></h4>
+                                        <div className='buttons'>
+                                            <Link  to={`/country/${numericCode}`}   className='btn'>Learn More</Link>
+                                        </div>
+                                </div>
+                        </div>
+                    </article>
         })}
         </section>
     </>

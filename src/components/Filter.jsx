@@ -1,10 +1,16 @@
 import React from 'react'
+import { useState, useEffect } from 'react';
 
 const Filter = () => {
+
   return (
     <section className='filter'>
         <form className='form-control'>
-            <input type='search' name='search' id='search' placeholder='Search for a country'/>
+            <input type='search' 
+            name='search' 
+            id='search' 
+            placeholder='Search for a country'
+            />
         </form>
 
         <div className='region-filter'>
